@@ -1,0 +1,15 @@
+.nav > li > a:hover {
+  color: #fff;
+  background-color: #007bff;
+}
+
+.nav-link.active {
+  color: #007bff;
+  text-decoration: none;
+  background-color: transparent;
+}
+
+.navbar {
+  -webkit-box-shadow: 2px 0px 10px -2px #000000;
+  box-shadow: 2px 0px 10px -2px #000000;
+}

@@ -1,0 +1,21 @@
+/* You can add global styles to this file, and also import other style files */
+
+button {
+  cursor: pointer;
+}
+
+i {
+  margin-right: 6px;
+}
+
+i.extra-space {
+  margin-right: 20px;
+}
+
+.col-center {
+  margin: auto;
+}
+
+app-root .card {
+  background-color: #f5f5f5;
+}

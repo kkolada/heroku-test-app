@@ -1,0 +1,36 @@
+<div id="employee-list" class="container">
+
+  <h2>
+    <i class="fa fa-users extra-space"></i>List of employees
+  </h2>
+  <hr>
+
+  <div class="row">
+    <div class="col-sm-12 col-center">
+
+      <div class="row">
+        <div class="col-sm-4" *ngFor="let user of _users">
+          <div class="card">
+            <div class="card-body">
+              <p><b>Full name: </b><span>{{user.firstName}}</span> <span>{{user.lastName}}</span></p>
+              <p><b>Mail: </b><span>{{user.email}}</span></p>
+              <p>
+                <app-star-rating [range]="10" [rating]="user.rating" [disabled]="true"></app-star-rating>
+              </p>
+              <div class="btn-group">
+                <button class="btn btn-secondary" (click)="editUser(user.userId)">
+                  <i class="fa fa-pencil-square-o"></i>Edit
+                </button>
+                <button class="btn btn-danger" (click)="removeUser(user)">
+                  <i class="fa fa-trash"></i>Remove
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div>
