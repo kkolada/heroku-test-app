@@ -1,0 +1,15 @@
+.star-rating span {
+  cursor: default;
+}
+
+.star-rating span.changeDefaultCursor {
+  cursor: pointer;
+}
+
+.star-rating i.fa-star {
+  color: #e3cf7a;
+}
+
+.star-rating i.fa-star-o {
+  color: #777;
+}

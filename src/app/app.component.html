@@ -1,0 +1,25 @@
+<nav class="navbar navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">
+      <img src="/assets/logo.png" width="120" height="50" alt="">
+    </a>
+    <ul class="nav nav-pills">
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/" routerLinkActive="active" href="#">
+          <i class="fa fa-television"></i>Dashboard
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/add-user" routerLinkActive="active" href="#">
+          <i class="fa fa-user-plus"></i>Add employee
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/user-list" routerLinkActive="active" href="#">
+          <i class="fa fa-users"></i>List of employees
+        </a>
+      </li>
+    </ul>
+  </div>
+</nav>
+<router-outlet></router-outlet>
