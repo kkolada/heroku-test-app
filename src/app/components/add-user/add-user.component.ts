@@ -24,7 +24,7 @@ export class AddUserComponent implements OnInit {
 
   validateModel() {
     return _.isEmpty(this.model.firstName) || _.isEmpty(this.model.lastName) || _.isEmpty(this.model.email)
-      || this.model.rating === 0;
+      || this.model.rating === 0 || this.model.active === null;
   }
 
 }
