@@ -8,7 +8,8 @@
           <div class="card">
             <div class="card-body">
               <p>
-                <b>Full name: </b><span>{{user.firstName}}</span> <span>{{user.lastName}}</span>
+                <b>Name: </b><span>{{user.firstName}}</span> <span>{{user.lastName}}</span>
+                <app-active-employee [pullRight]="true" [active]="user.active" [disabled]="true"></app-active-employee>
               </p>
               <p>
                 <b>Mail: </b><span>{{user.email}}</span>

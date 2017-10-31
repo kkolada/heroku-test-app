@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { User, UserService } from "../../services/user.service";
+import { User, UserService } from '../../services/user.service';
 
 @Component({
-  selector: 'best-employees-widget',
+  selector: 'app-best-employees-widget',
   templateUrl: './best-employees-widget.html',
   styleUrls: ['./best-employees-widget.css']
 })
-export class BestEmployeesWidget implements OnInit {
+export class BestEmployeesWidgetComponent implements OnInit {
 
   _users: User[];
 
@@ -17,7 +17,7 @@ export class BestEmployeesWidget implements OnInit {
   }
 
   getBestEmployees(): User[] {
-    let users: User[] = this.userService.getUsers(),
+    const users: User[] = this.userService.getUsers(),
       bestEmplyoees: User[] = [];
 
     users.forEach((worker) => {

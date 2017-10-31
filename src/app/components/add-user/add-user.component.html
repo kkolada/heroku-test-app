@@ -25,6 +25,10 @@
           <label for="starRating">Star rating: </label>
           <app-star-rating id="starRating" [range]="10" [(rating)]="model.rating"></app-star-rating>
         </div>
+        <div class="form-group">
+          <label for="activeEmployee">Active: </label>
+          <app-active-employee id="activeEmployee" class="ml-2" [(active)]="model.active"></app-active-employee>
+        </div>
         <button type="submit" class="btn btn-primary float-right" [disabled]="validateModel()">
           <i class="fa fa-plus-circle"></i>Add new employee
         </button>

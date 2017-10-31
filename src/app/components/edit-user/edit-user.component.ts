@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { User, UserService } from '../../services/user.service';
-import { ActivatedRoute, Router } from "@angular/router";
+import { ActivatedRoute, Router } from '@angular/router';
 import * as _ from 'lodash';
 
 @Component({
@@ -22,7 +22,7 @@ export class EditUserComponent implements OnInit {
     this.model = this.userService.getUserById(userId);
   }
 
-  saveChanges(){
+  saveChanges() {
     this.userService.saveChanges(this.model);
     this.router.navigate(['/user-list']);
   }

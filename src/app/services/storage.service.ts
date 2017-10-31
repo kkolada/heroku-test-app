@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
-import { User } from "./user.service";
+import { User } from './user.service';
 
-const itemKey: string = 'EARP_Employee_Manager_workers';
+const itemKey = 'EARP_Employee_Manager_workers';
 
 @Injectable()
 export class StorageService {

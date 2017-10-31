@@ -42,10 +42,10 @@ export class StarRatingComponent implements OnInit, OnChanges {
   }
 
   initArray(size) {
-    let ratingsArray: Star[] = new Array(size);
+    const ratingsArray: Star[] = new Array(size);
 
     for (let i = 0; i < size; i++) {
-      ratingsArray[i] = new Star(false, i+1);
+      ratingsArray[i] = new Star(false, i + 1);
     }
 
     return ratingsArray;
@@ -76,13 +76,15 @@ export class StarRatingComponent implements OnInit, OnChanges {
   }
 
   mouseEnter(star) {
-    if (!this.disabled)
+    if (!this.disabled) {
       this.changeSelection(star, true);
+    }
   }
 
   mouseLeave(star) {
-    if (!this.disabled)
+    if (!this.disabled) {
       this.changeSelection(star, false);
+    }
   }
 
   mouseClick(star) {

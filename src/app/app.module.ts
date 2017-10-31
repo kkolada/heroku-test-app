@@ -5,7 +5,7 @@ import { HttpModule } from '@angular/http';
 import { RouterModule, Routes } from '@angular/router';
 
 import { AppComponent } from './app.component';
-import { BestEmployeesWidget } from './components/best-employees-widget/best-employees-widget';
+import { BestEmployeesWidgetComponent } from './components/best-employees-widget/best-employees-widget';
 import { UserListComponent } from './components/user-list/user-list.component';
 
 import { UserService } from './services/user.service';
@@ -14,6 +14,7 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { EditUserComponent } from './components/edit-user/edit-user.component';
 import { StorageService } from './services/storage.service';
 import { StarRatingComponent } from './shared/star-rating/star-rating.component';
+import { ActiveEmployeeComponent } from './shared/active-employee/active-employee.component';
 
 
 const appRoutes: Routes = [
@@ -43,12 +44,13 @@ const appRoutes: Routes = [
 @NgModule({
   declarations: [
     AppComponent,
-    BestEmployeesWidget,
+    BestEmployeesWidgetComponent,
     UserListComponent,
     AddUserComponent,
     DashboardComponent,
     EditUserComponent,
-    StarRatingComponent
+    StarRatingComponent,
+    ActiveEmployeeComponent
   ],
   imports: [
     BrowserModule,

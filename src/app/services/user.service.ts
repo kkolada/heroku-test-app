@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import * as _ from 'lodash';
-import { StorageService } from "./storage.service";
+import { StorageService } from './storage.service';
 
 @Injectable()
 export class UserService {
@@ -13,7 +13,7 @@ export class UserService {
    * Load users for the first time, when app starts.
    */
   loadUsers() {
-    let importedUser = this.storageService.getUsers();
+    const importedUser = this.storageService.getUsers();
     if (!_.isNull(importedUser)) {
       this.users = importedUser;
     }
@@ -24,7 +24,7 @@ export class UserService {
    * @returns {User}
    */
   getEmptyUserModel() {
-    return new User(null, null, null, 0, this.generateUserId());
+    return new User(null, null, null, 0, null, this.generateUserId());
   }
 
   /**
@@ -41,7 +41,9 @@ export class UserService {
     while
       (
         this.users.some((element) => {
-          if (element.userId === newUserId) return true;
+          if (element.userId === newUserId) {
+            return true;
+          }
         })
       );
 
@@ -70,10 +72,10 @@ export class UserService {
    * @param {number} userId
    */
   removeUser(userId: number) {
-    let idx = this.users.findIndex(function (o) {
-      return o.userId == userId;
+    const idx = this.users.findIndex(function (o) {
+      return o.userId === userId;
     });
-    if (idx != -1) {
+    if (idx !== -1) {
       this.users.splice(idx, 1);
 
       this.storageService.setUsers(this.users);
@@ -96,9 +98,12 @@ export class UserService {
    */
   private findUserById(userId) {
     let foundIndex = -1;
+    if (typeof userId !== 'number') {
+      userId = parseInt(userId, 10);
+    }
 
     for (let i = 0; i < this.users.length; i++) {
-      if (userId == this.users[i].userId) {
+      if (userId === this.users[i].userId) {
         foundIndex = i;
       }
     }
@@ -111,12 +116,13 @@ export class UserService {
    * @param user
    */
   saveChanges(user: User) {
-    let userIndex = this.findUserById(user.userId);
+    const userIndex = this.findUserById(user.userId);
     if (userIndex !== -1) {
       this.users[userIndex].firstName = user.firstName;
       this.users[userIndex].lastName = user.lastName;
       this.users[userIndex].email = user.email;
       this.users[userIndex].rating = user.rating;
+      this.users[userIndex].active = user.active;
 
       this.storageService.setUsers(this.users);
     }
@@ -125,10 +131,7 @@ export class UserService {
 }
 
 export class User {
-  constructor(public firstName: string,
-              public lastName: string,
-              public email: string,
-              public rating: number,
-              public userId: number) {
+  constructor(public firstName: string, public lastName: string, public email: string, public rating: number,
+              public active: boolean, public userId: number) {
   }
 }
