@@ -1,6 +1,12 @@
 # Heroku Test App - Employee Manager
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.4.5.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli). It shows the exemplary implementation of entry trainee application - manage employees (CRUD), show list of employees, mark employees as active/inactive, rate employees.
+
+Above task allows you to check/learn about the creation of components, routing, direct communication between components/using services to communicate between components. In extended/advanced version there are plenty of useful tasks - create login modal, integration with REST API, etc. It is recommended to check creativity of trainee at first, then if something is not clear, there are no ideas - you can use the showcase located at Heroku (see link below).
+
+This project is integrated with Heroku (which allows to build, run and operate applications entirely in the cloud).
+
+DEMO: [Employee-Manager](https://earp-employee-manager-test-app.herokuapp.com/)
 
 ## Development server
 
